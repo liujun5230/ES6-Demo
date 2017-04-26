@@ -2,8 +2,7 @@
 学习阮一峰ES6教程写的一些练习代码
 
 # 阮一峰 《ECMAScript 6 入门》在线版阅读地址
- [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)【http://es6.ruanyifeng.com/】
-
+ [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)【 http://es6.ruanyifeng.com 】
 > 注：阮一峰的这本书是非常不错的ES6入门教材，虽然是开源的，但同时它也在出版社出版，大家可以先看看，再决定买不买。出版社有利润压力，但还是尊重阮一峰的意见支持开源。如果你觉得本书对自己学习ES6有较大的帮助，希望你支持优秀的开源书籍，去购买本书实体版。
 
 # 购买链接：
