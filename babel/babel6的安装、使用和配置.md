@@ -11,15 +11,15 @@
 
 打开命令行工具，安装`babel-cli`：
 
-	```CMD
-	npm install --save-dev babel-cli
-	```
+```javascript
+npm install --save-dev babel-cli
+```
 
 但是我通常不会这样干，我会用淘宝镜像来安装，只在开始多敲了一个字母c，安装速度快了N倍
 
-	```CMD
-	cnpm install --save-dev babel-cli
-	```
+```javascript
+cnpm install --save-dev babel-cli
+```
 
 `--save`参数自动更新`package.json`文件，写进依赖项
 
@@ -27,10 +27,10 @@
 
 这里我安装了`babel-preset-latest` 和 `babel-preset-env`
 
-	```CMD
-	cnpm install --save-dev babel-preset-env
-	cnpm install --save-dev babel-preset-latest
-	```
+```javascript
+cnpm install --save-dev babel-preset-env
+cnpm install --save-dev babel-preset-latest
+```
 
 如果还想了解更多或者安装其他插件，可以去[这里](https://babeljs.io/docs/plugins/)看看。
 
@@ -40,72 +40,72 @@
 
 先建立一个名字叫`es6-example.js`的文件，写些es6的代码：
 
-	```javascript
-	input.map(item => item + 1);
-	```
+```javascript
+input.map(item => item + 1);
+```
 	
 然后在命令行里输入：
 
-	```CMD
-	babel es6-example.js --presets es2015
-	```
+```javascript
+babel es6-example.js --presets es2015
+```
 
 即可转换成es2015代码在命令行输出：
 
-	```javascript
-	"use strict";
+```javascript
+"use strict";
 
-	input.map(function (item) {
-  		return item + 1;
-	});
-	```
+input.map(function (item) {
+	return item + 1;
+});
+```
 
 
 # 配置babel
 
 每转换一次都写上`--presets es2015`参数那是很麻烦的，可以在当前目录下新建配置文件 `.babelrc`。但是在windows系统中，不允许直接右键建立没有文件名的文件，可以通过cmd命令行创建：在当前文件夹打开cmd并键入命令
 
-	```cmd
-	type nul>.babelrc
-	```
+```javascript
+type nul>.babelrc
+```
 
 即可在当前目录下建立文件`.babelrc`，然后在文件中写入：
 
-	```javascript
-	{
-		"presets": ['es2015']
-	}
-	```
+```javascript
+{
+	"presets": ['es2015']
+}
+```
 
 然后就可以直接在命令行中不带参数，直接转换了：
 
-	```CMD
-	babel es6-example.js
-	```
+```javascript
+babel es6-example.js
+```
 
 除了建`.babelrc`文件，还有种更好的办法就是把babel配置写到`package.json`文件中，效果一样：
 
-	```javascript
-	{
-		"devDependencies": {
-			"babel-cli": "^6.24.1",
-			"babel-preset-env": "^1.4.0",
-			"babel-preset-latest": "^6.24.1",
-			"babel-preset-react": "^6.24.1"
-		},
-  
-		//这里就是babel的配置
-	    "babel": {
-	  
-			//配置转换插件
-			"presets":[
-				"latest",
-				"react"
-			],
-			"plugins":[]	
-		}
+```javascript
+{
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-preset-env": "^1.4.0",
+		"babel-preset-latest": "^6.24.1",
+		"babel-preset-react": "^6.24.1"
+	},
+
+	//这里就是babel的配置
+	"babel": {
+
+		//配置转换插件
+		"presets":[
+			"latest",
+			"react"
+		],
+		"plugins":[]	
 	}
-	```
+}
+```
 
 
 	
@@ -115,47 +115,47 @@
 
 1. 转换es6.js文件并在当前命名行程序窗口中输出
 
-		```javascript
-		babel es6.js
-		```
+```javascript
+babel es6.js
+```
  
 
 2. 将es6.js转换后输出到es5.js文件中（使用 -o 或 --out-file ）
 
-		```javascript
-		babel es6.js -o es5.js 
+```javascript
+babel es6.js -o es5.js 
 
-		babel es6.js --out-file es5.js
-		```
+babel es6.js --out-file es5.js
+```
  
 
 3. 实时监控es6.js一有变化就重新编译（使用 -w 或 --watch ）
 
-		```javascript
-		babel es6.js -w --out-file es5.js
+```javascript
+babel es6.js -w --out-file es5.js
 
-		babel es6.js --watch --out-file es5.js
-		```
+babel es6.js --watch --out-file es5.js
+```
  
 
 4. 编译整个src文件夹并输出到lib文件夹中（使用 -d 或 --out-dir ）
 
-		```javascript
-		babel src -d lib
+```javascript
+babel src -d lib
 
-		babel src --out-dir lib
-		```
+babel src --out-dir lib
+```
  
 
 5. 编译整个src文件夹并输出到一个文件中
 
-		```javascript
-		babel src --out-file es5.js
-		```
+```javascript
+babel src --out-file es5.js
+```
  
 
 6. 直接输入babel-node命令，可以在命令行中直接运行ES6代码
 
-		```javascript
-		babel-node 
-		```
+```javascript
+babel-node 
+```
