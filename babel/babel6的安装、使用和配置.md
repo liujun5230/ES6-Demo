@@ -11,7 +11,7 @@
 
 打开命令行工具，安装babel-cli：
 
-	npm install --save-dev babel-cli
+	`npm install --save-dev babel-cli`
 
 但是我通常不会这样干，我会用淘宝镜像来安装，只在开始多敲了一个字母c，安装速度快了N倍
 
