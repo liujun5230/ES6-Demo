@@ -28,7 +28,8 @@
 
 如果还想了解更多或者安装其他插件，可以去[这里](https://babeljs.io/docs/plugins/)看看。
 
-#使用babel
+# 使用babel
+
 有了上面两步，现在就可以开始使用babel了。
 
 先建立一个名字叫es6-example.js的文件，写些es6的代码：
