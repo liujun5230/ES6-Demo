@@ -156,6 +156,69 @@ babel src --out-file es5.js
 
 6. 直接输入babel-node命令，可以在命令行中直接运行ES6代码
 
+<<<<<<< HEAD
 ```javascript
 babel-node 
 ```
+=======
+		babel-node
+
+
+## Node环境中Babel的用法
+
+## 用法一：调用`babel-core`的`transfrom`方法
+
+
+1. 先安装`babel-core`和`babel-preset-es2015`
+
+		$ npm install --save-dev babel-core babel-preset-es2015
+ 
+
+2. 然后在根目录下新建一个`.babelrc`文件。
+
+		//新建.babelrc文件
+		$ type nul>.babelrc
+		
+		//.babelrc文件配置
+		{
+			"presets":["es2015"]
+		} 
+		
+3. 然后在脚本中，调用`babel-core`的`transfrom`方法。
+		
+		//es6Code 也可以是require进来的文件，可以写成一个转换函数
+		var es6Code = 'let x = n => n + 1';
+		var es5Code = require('babel-core')
+			.transform(es6Code,{presets:['es2015']})
+			.code;
+		//transform方法的第一个参数是一个字符串，表示需要转换的ES6代码，
+		//第二个参数是转换配置对象
+
+
+
+## 用法二：把`babel`加载为`require`命令的一个钩子
+
+1. 安装`babel-core`和`babel-preset-es2015`后，在项目根目录下设置一个配置文件`.babelrc`。
+
+		{
+			"presets":["es2015"]
+		} 
+
+
+2. 然后，在你的应用入口脚本（entry script）头部,加入下面的语句。有了这行语句，后面所有通过`require`命令加载的后缀名为`.es6`、`.es`、`.jsx`和`.js`的脚本都会先通过`babel`转码后再加载。
+		
+		require("babel-core/register");
+
+
+
+	需要注意的是，Babel默认不会转换Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如`Object.assign`）。如果要支持这些转换，还需要安装`babel-polyfill`模块。
+
+		$ npm install babel-polyfill --save
+
+	然后在所有脚本头部加上一行。
+
+		require('babel-polyfill')
+	或者
+		import('babel-polyfill');
+
+>>>>>>> ee39e86c568cbd93960e050af178cf974eb9e4b5

@@ -6,10 +6,12 @@
     "babel-preset-react": "^6.24.1"
   },
   "babel": {
-    "presets": [
-      "latest",
-      "react"
-    ],
-    "plugins": []
+	  
+	//配置转换插件
+	"presets":[
+		"latest",
+		"react"
+	],
+	"plugins":[]	
   }
 }

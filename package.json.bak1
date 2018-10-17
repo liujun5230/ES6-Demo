@@ -5,11 +5,15 @@
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1"
   },
+  
+  //这里就是babel的配置
   "babel": {
-    "presets": [
-      "latest",
-      "react"
-    ],
-    "plugins": []
+	  
+	//配置转换插件
+	"presets":[
+		"latest",
+		"react"
+	],
+	"plugins":[]	
   }
 }
